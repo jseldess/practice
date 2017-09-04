@@ -11,10 +11,12 @@ def play_hangman():
     while len(alphabet) > 0:
         guess = raw_input("GUESS A LETTER: ")
         if len(guess) > 1 or guess.isalpha() is False:
-            print("ENTER A SINGLE LETTER OF THE ALPHABET.\n")
+            print("\nENTER A SINGLE LETTER OF THE ALPHABET.")
+            print("Answer: " + " ".join(right_guesses) + "\n")
             continue
         elif guess not in alphabet:
-            print("YOU ALREADY TRIED THAT LETTER. PICK ANOTHER.\n")
+            print("\nYOU ALREADY TRIED THAT LETTER. PICK ANOTHER.")
+            print("Answer: " + " ".join(right_guesses) + "\n")
             continue
         elif guess in solution:
             count = solution.count(guess)
@@ -57,7 +59,7 @@ def play_hangman():
                                                             |
                                                  ___________|
                                                  """)
-                print("NOPE! TRY AGAIN. Wrong guesses:" + str(sorted(wrong_guesses)))
+                print("NOPE! TRY AGAIN. Wrong guesses: " + str(sorted(wrong_guesses)))
                 print("Answer: " + " ".join(right_guesses) + "\n")
                 continue
             if wrong_count == 2:
@@ -82,7 +84,7 @@ def play_hangman():
                                                             |
                                                  ___________|
                                                  """)
-                print("NOPE! TRY AGAIN. Wrong guesses:" + str(sorted(wrong_guesses)))
+                print("NOPE! TRY AGAIN. Wrong guesses: " + str(sorted(wrong_guesses)))
                 print("Answer: " + " ".join(right_guesses) + "\n")
                 continue
             if wrong_count == 3:
@@ -107,7 +109,7 @@ def play_hangman():
                                                             |
                                                  ___________|
                                                  """)
-                print("NOPE! TRY AGAIN. Wrong guesses:" + str(sorted(wrong_guesses)))
+                print("NOPE! TRY AGAIN. Wrong guesses: " + str(sorted(wrong_guesses)))
                 print("Answer: " + " ".join(right_guesses) + "\n")
                 continue
             if wrong_count == 4:
@@ -132,7 +134,7 @@ def play_hangman():
                                                             |
                                                  ___________|
                                                  """)
-                print("NOPE! TRY AGAIN. Wrong guesses:" + str(sorted(wrong_guesses)))
+                print("NOPE! TRY AGAIN. Wrong guesses: " + str(sorted(wrong_guesses)))
                 print("Answer: " + " ".join(right_guesses) + "\n")
                 continue
             if wrong_count == 5:
@@ -157,7 +159,7 @@ def play_hangman():
                                                             |
                                                  ___________|
                                                  """)
-                print("NOPE! TRY AGAIN. Wrong guesses:" + str(sorted(wrong_guesses)))
+                print("NOPE! TRY AGAIN. Wrong guesses: " + str(sorted(wrong_guesses)))
                 print("Answer: " + " ".join(right_guesses) + "\n")
                 continue
             if wrong_count == 6:
@@ -189,4 +191,5 @@ while True:
     play_hangman()
     restart = raw_input("Want to play again? (y/n) ")
     if restart != "y":
+        print("Bye!")
         break
