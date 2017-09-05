@@ -16,8 +16,7 @@ def check_guess(guess):
         reject_wrong_answer(guess)
 
 def fill_correct_answer(guess):
-    global right_guesses
-    global alphabet
+    global right_guesses, alphabet
     count = solution.count(guess)
     index = solution.index(guess)
     right_guesses[index] = guess
@@ -27,16 +26,15 @@ def fill_correct_answer(guess):
         count -= 1
     if " ".join(right_guesses) != " ".join(solution):
         print("\nGOOD GUESS!\nAnswer: " + " ".join(right_guesses))
-        alphabet = alphabet.replace(guess, "")
+        alphabet.replace(guess, "")
     else:
         print("\nYOU DID IT!\nAnswer: " + " ".join(right_guesses))
         alphabet = ""
 
 def reject_wrong_answer(guess):
-    global wrong_count
-    global alphabet
+    global wrong_count, alphabet
     wrong_guesses.append(guess)
-    alphabet = alphabet.replace(guess, "")
+    alphabet.replace(guess, "")
     wrong_count += 1
     if wrong_count == 1:
         print("""
@@ -184,7 +182,7 @@ def reject_wrong_answer(guess):
         alphabet = ""
 
 while True:
-    words = ["mama", "tortoise", "germany", "banana", "panda", "swimming", "seepferdchen"]
+    words = ["telephone", "whale", "pancakes", "beach", "dancer"]
     solution = list(random.choice(words))
     right_guesses = ["_" for x in solution]
     wrong_guesses = []
