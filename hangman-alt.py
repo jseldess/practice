@@ -26,7 +26,7 @@ def fill_correct_answer(guess):
         count -= 1
     if " ".join(right_guesses) != " ".join(solution):
         print("\nGOOD GUESS!\nAnswer: " + " ".join(right_guesses))
-        alphabet.replace(guess, "")
+        alphabet = alphabet.replace(guess, "")
     else:
         print("\nYOU DID IT!\nAnswer: " + " ".join(right_guesses))
         alphabet = ""
@@ -34,7 +34,7 @@ def fill_correct_answer(guess):
 def reject_wrong_answer(guess):
     global wrong_count, alphabet
     wrong_guesses.append(guess)
-    alphabet.replace(guess, "")
+    alphabet = alphabet.replace(guess, "")
     wrong_count += 1
     if wrong_count == 1:
         print("""
